@@ -8,6 +8,9 @@ const bricks = (options = {}) => {
 
   let sizeIndex
   let sizeDetail
+  
+  let gutterTop
+  let gutterLeft
 
   let columnTarget
   let columnHeights
