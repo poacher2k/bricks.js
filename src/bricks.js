@@ -126,7 +126,8 @@ const bricks = (options = {}) => {
       element.style.position = 'absolute'
 
       nodeTop = `${columnHeights[columnTarget]}px`
-      nodeLeft = `${(columnTarget * nodesWidths[index]) + (columnTarget * sizeDetail.gutter)}px`
+      gutterLeft = typeof sizeDetail.gutter === 'string' ? sizeDetail.gutter : sizeDetail.gutter.left
+      nodeLeft = `${(columnTarget * nodesWidths[index]) + (columnTarget * gutterLeft)}px`
 
       // support positioned elements (default) or transformed elements
       if (position) {
@@ -143,7 +144,8 @@ const bricks = (options = {}) => {
       nodeHeight = nodesHeights[index]
 
       if (nodeWidth && nodeHeight) {
-        columnHeights[columnTarget] += nodeHeight + sizeDetail.gutter
+        gutterTop = typeof sizeDetail.gutter === 'string' ? sizeDetail.gutter : sizeDetail.gutter.top
+        columnHeights[columnTarget] += nodeHeight + gutterTop
       }
     })
   }
@@ -152,8 +154,10 @@ const bricks = (options = {}) => {
 
   function setContainerStyles () {
     container.style.position = 'relative'
-    container.style.width = `${sizeDetail.columns * nodeWidth + (sizeDetail.columns - 1) * sizeDetail.gutter}px`
-    container.style.height = `${Math.max.apply(Math, columnHeights) - sizeDetail.gutter}px`
+    gutterLeft = typeof sizeDetail.gutter === 'string' ? sizeDetail.gutter : sizeDetail.gutter.left
+    container.style.width = `${sizeDetail.columns * nodeWidth + (sizeDetail.columns - 1) * gutterLeft}px`
+    gutterTop = typeof sizeDetail.gutter === 'string' ? sizeDetail.gutter : sizeDetail.gutter.top
+    container.style.height = `${Math.max.apply(Math, columnHeights) - gutterTop}px`
   }
 
   // resize helpers
