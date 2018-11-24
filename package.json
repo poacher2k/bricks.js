@@ -3,8 +3,8 @@
   "description": "A blazing fast masonry layout generator for fixed width elements.",
 
   "main":        "src/bricks.js",
-  "module":      "src/bricks.js",",
-  "jsnext:main": "src/bricks.js",",
+  "module":      "src/bricks.js",
+  "jsnext:main": "src/bricks.js",
 
   "version": "1.8.0",
   "license": "MIT",
