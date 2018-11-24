@@ -2,7 +2,7 @@
   "name":        "bricks.js",
   "description": "A blazing fast masonry layout generator for fixed width elements.",
 
-  "main":        "dist/bricks.js",
+  "main":        "src/bricks.js",
   "module":      "dist/bricks.module.js",
   "jsnext:main": "dist/bricks.module.js",
 
@@ -25,8 +25,7 @@
     "prepublish": "npm run test",
     "pretest":    "npm run build",
     "server":     "python -m SimpleHTTPServer 3000",
-    "test":       "npm run lint",
-    "postinstall": "npm run build"
+    "test":       "npm run lint"
   },
 
   "keywords": [
